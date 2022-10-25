@@ -1,4 +1,4 @@
-import { IsEmail } from 'class-validator'
+import { IsEmail, IsString } from 'class-validator'
 
 export class UserDto {
 	@IsEmail()
@@ -6,12 +6,12 @@ export class UserDto {
 
 	password: string
 
-	@IsEmail()
+	@IsString()
 	name: string
 
-	@IsEmail()
+	@IsString()
 	description: string
 
-	@IsEmail()
+	@IsString()
 	avatarPath: string
 }

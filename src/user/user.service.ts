@@ -58,7 +58,7 @@ export class UserService {
 		user.description = dto.description
 		user.avatarPath = dto.avatarPath
 
-		await this.subscriptionRepository.save(user)
+		return this.subscriptionRepository.save(user)
 	}
 
 	async subscribe(id: number, channelId: number) {

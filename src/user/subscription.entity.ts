@@ -1,6 +1,7 @@
 import { Entity, JoinColumn, ManyToOne, OneToMany } from 'typeorm'
 import { CustomBaseEntity } from '../utils/db/custom.base.entity'
 import { UserEntity } from './user.entity'
+import { VideoEntity } from '../video/video.entity'
 
 @Entity('Subscription')
 export class SubscriptionEntity extends CustomBaseEntity {
@@ -8,7 +9,7 @@ export class SubscriptionEntity extends CustomBaseEntity {
 	@JoinColumn({ name: 'from_user_id' })
 	fromUser: UserEntity
 
-	@OneToMany(() => UserEntity, video => video.subscriptions)
+	@OneToMany(() => VideoEntity, video => video.author)
 	@JoinColumn({ name: 'to_channel_id' })
 	toChannel: UserEntity
 }

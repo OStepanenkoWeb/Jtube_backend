@@ -31,7 +31,7 @@ export class VideoEntity extends CustomBaseEntity {
 
 	@ManyToOne(() => UserEntity, user => user.videos)
 	@JoinColumn({ name: 'user_id' })
-	author: UserEntity[]
+	author: UserEntity
 
 	@OneToMany(() => CommentEntity, comment => comment.video)
 	comments: CommentEntity[]
